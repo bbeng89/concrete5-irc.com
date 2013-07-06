@@ -4,7 +4,6 @@ from django.core.paginator import EmptyPage, PageNotAnInteger
 
 register = template.Library()
 
-#takes in an integer that represents seconds and returns the xxhrs xxmin representation
 @register.filter
 def colorize(value):
 	"""
@@ -15,7 +14,6 @@ def colorize(value):
 		return ""
 	color = sum([ord(c) for c in value])
 	return "#%X" % color
-
 
 
 #  Based on: http://www.tummy.com/articles/django-pagination/
