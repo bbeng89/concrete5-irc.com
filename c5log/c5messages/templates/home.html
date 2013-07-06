@@ -1,0 +1,34 @@
+{% extends "_base.html" %}
+{% load common %}
+
+{% block page_title %} Home | {{ block.super }} {% endblock %}
+
+{% block content %}
+	<div class="header">
+		<a href="http://www.concrete5.org" target="_blank"><img src="{{ STATIC_URL }}img/concrete5_Wordmark_200x37.png" style="vertical-align:middle;" /></a> 
+		<span style="font-size:28px;vertical-align:middle;"> - IRC Logs</span>
+	</div>
+	<br/>
+	<p>Concrete5-irc.com has logged {{ msg_count }} messages since {{ earliest_date.date }}. All times listed are UTC.</p>
+	<table class="table-log">
+		<thead>
+			<tr>
+				<th>Latest Messages</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for msg in msgs %}
+				<tr>
+					<td>
+						[{{ msg.logtime|date:"H:i:s" }}] <span class="usr" style="color: {{ msg.user|colorize }}">&lt;{{ msg.user }}&gt;</span> {{ msg.message|urlize }}
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+		<tfoot>
+			<tr>
+				<td><a href="{% url 'archives' %}">View all messages for today</a></td>
+			</tr>
+		</tfoot>
+	</table>
+{% endblock %}

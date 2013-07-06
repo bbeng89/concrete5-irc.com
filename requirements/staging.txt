@@ -1,0 +1,5 @@
+#include all requirements from _base.txt
+
+-r _base.txt 
+
+#requirements specific to staging site

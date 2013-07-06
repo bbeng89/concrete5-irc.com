@@ -1,0 +1,37 @@
+{% extends "_base.html" %}
+{% load common %}
+
+{% block page_title %} Search Results | {{ block.super }} {% endblock %}
+
+{% block content %}
+	<h1>Search Results</h1>
+	<p>Showing results for: {{ q }}</p>
+	<table class="table-log">
+		<tbody>
+			{% for msg in msgs %}
+				<tr>
+					<td>
+						[{{ msg.logtime|date:"m/d/Y H:i:s" }}] <span class="usr" style="color: {{ msg.user|colorize }}">&lt;{{ msg.user }}&gt;</span> {{ msg.message|urlize }}
+						<a class="read-more pull-right" href="{% url 'archives' msg.logtime|date:'m-d-Y' %}#{{ msg.id }}">View conversation &rarr;</a>
+					</td>
+				</tr>
+			{% empty %}
+				<tr>
+					<td>
+						<p>No messages found matching: {{ q }}</p>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+		<tfoot>
+			<tr>
+				<td style="padding:8px;">
+					{% paginator 3 %} 
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

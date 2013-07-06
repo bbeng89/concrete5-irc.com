@@ -1,0 +1,1 @@
+This is the code for IRC log web application [concrete5-irc.com](http://concrete5-irc.com). 

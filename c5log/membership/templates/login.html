@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Concrete5 IRC Logs</title>
+		<meta name="description" content="View archives of the #concrete5 IRC channel">
+		<meta name="author" content="Blake Bengtson (bbeng89)">
+		<link href="{{ STATIC_URL }}css/c5log.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="container-fluid">
+				<div class="row-fluid" style="margin-top:50px;">
+					<div class="span8 offset2">
+						<div class="header">
+							<a href="http://www.concrete5.org" target="_blank"><img src="{{ STATIC_URL }}img/concrete5_Wordmark_200x37.png" style="vertical-align:middle;" /></a> 
+							<span style="font-size:28px;vertical-align:middle;"> - IRC Logs</span>
+						</div>
+						<hr/>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span8 offset2">
+						<div class="row-fluid">
+							<div class="span6">
+								<legend>Sign In</legend>
+								<form class="form-horizontal" action="" method="POST">
+									<div class="control-group">
+										<label class="control-label" for="email">Email</label>
+										<div class="controls">
+											<input type="text" name="email" placeholder="Email Address" class="span10">
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="password">Password</label>
+										<div class="controls">
+											<input type="password" name="password" placeholder="Password" class="span10">
+											<br/><br/>
+											<button type="submit" class="btn btn-inverse">Sign In</button>
+											{% if error %}
+												<br/><br/>
+												<p class="text-error">{{ error }}</p>
+											{% endif %}
+										</div>
+									</div>
+									{% csrf_token %}
+								</form>
+							</div>
+							<div class="span6">
+								<legend>Register</legend>
+								<strong>Don't have an account?</strong>
+								<p>Join the #concrete5 IRC channel on the freenode network and send the following message to our bot:</p>
+								<code>
+									/msg c5irc register [your_password] [your_email]
+								</code>
+								<br/><br/>
+								<p>Registering will give you access to the IRC logs for #concrete5</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /container -->
+			<div id="push"></div>
+		</div>
+		<div id="footer">
+			<div class="container-fluid">
+				<div class="row-fluid" id="credit">
+					<div class="span8 offset2">
+						<div class="pull-left">
+							<span><a href="http://concrete5.org">Concrete5</a> is a registered trademark of Concrete CMS, Inc</span>
+						</div>
+						<div class="pull-right">
+							<span>&copy; {% now "Y" %} <a href="http://concrete5-irc.com">concrete5-irc.com</a> | Site created by bbeng89</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-41013838-1', 'concrete5-irc.com');
+		  ga('send', 'pageview');
+		</script>
+	</body>
+</html>

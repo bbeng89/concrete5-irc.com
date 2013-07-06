@@ -1,0 +1,13 @@
+#base required packages for web app
+Django==1.5.1
+MySQL-python==1.2.4
+South==0.7.6
+Unipath==1.0
+argparse==1.2.1
+django-braces==1.0.0
+pytz==2013b
+wsgiref==0.1.2
+
+#required packages for bot
+Twisted==13.0.0
+zope.interface==4.0.5

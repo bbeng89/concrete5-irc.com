@@ -1,0 +1,7 @@
+
+Hello {{ nick }},
+
+Thank you for registering on concrete5-irc.com! To complete your registration just click the following link and log in when prompted:
+http://concrete5-irc.com/login/?reg={{ reg_code }}
+
+For questions or comments email admin@concrete5-irc.com

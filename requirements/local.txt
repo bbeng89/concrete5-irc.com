@@ -1,0 +1,7 @@
+#include all requirements from _base.txt
+
+-r _base.txt 
+
+#requirements specific to local development
+
+django-debug-toolbar==0.9.4

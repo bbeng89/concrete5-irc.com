@@ -1,0 +1,35 @@
+<div class="clearfix">
+   <div class="pull-left">
+      {{ paginator.count }} record{{ paginator.count|pluralize }}
+   </div>
+   <div class="pull-right">
+      <div class="pagination" style="margin:0px;">
+         <ul>
+            {% if has_previous %}
+               <li>
+                  <a href="{% url url_name previous %}?{{ query_strings }}">&laquo; Prev</a>
+               </li>
+            {% endif %}
+
+            {% if show_first %}
+               <li><a href="{% url url_name 1 %}?{{ query_strings }}">1</a></li>
+               <li class="disabled"><a href="#">...</a></li>
+            {% endif %}
+            {% for linkpage in page_numbers %}
+               {% ifequal linkpage page %}
+                  <li class="active"><a href="#">{{ page }}</a></li>
+               {% else %}
+                  <li><a href="{% url url_name linkpage %}?{{ query_strings }}">{{ linkpage }}</a></li>
+               {% endifequal %}
+            {% endfor %}
+            {% if show_last %}
+               <li class="disabled"><a href="#">...</a></li>
+               <li><a href="{% url url_name pages %}?{{ query_strings }}">{{ pages }}</a></li>
+            {% endif %}
+            {% if has_next %}
+               <li><a href="{% url url_name next %}?{{ query_strings }}">Next &raquo;</a></li>
+            {% endif %}
+         </ul>
+      </div>
+   </div>
+</div>

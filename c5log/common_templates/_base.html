@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{% block page_title %}Concrete5 IRC Logs{% endblock %}</title>
+		<meta name="description" content="View archives of the #concrete5 IRC channel">
+		<meta name="author" content="Blake Bengtson (bbeng89)">
+		<link href="{{ STATIC_URL }}css/c5log.css" rel="stylesheet">
+		{% block head %}{% endblock %}
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="brand" href="{% url 'home' %}">#Concrete5 IRC Logs</a>
+					<ul class="nav">
+						<li {% if request.resolver_match.url_name == "home" %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
+						<li class="{% if request.resolver_match.url_name == 'archives' %}active{% endif %}">
+							<a href="{% url 'archives' %}">Archives</a>
+						</li>
+						<li class="{% if request.resolver_match.url_name == 'stats' %}active{% endif %}">
+							<a href="{% url 'stats' %}">Statistics</a>
+						</li>
+						<li class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+							<a href="{% url 'about' %}">About</a>
+						</li>
+						<li class="divider-vertical"></li>
+					</ul>
+					<p class="pull-left navbar-text">{{ user.email }} | <a href="{% url 'logout' %}">Logout</a></p>
+					<form class="navbar-search pull-right" method="GET" action="{% url 'search' %}">
+						<input type="text" class="search-query" placeholder="Search" name="q" value="{{ q }}" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					{% block content %}{% endblock %}
+				</div>
+			</div>
+			<hr/>
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="pull-left">
+						<span><a href="http://concrete5.org">Concrete5</a> is a registered trademark of Concrete CMS, Inc</span>
+					</div>
+					<div class="pull-right">
+						<span>&copy; {% now "Y" %} <a href="http://concrete5-irc.com">concrete5-irc.com</a> | Site created by bbeng89</span>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /container -->
+		<!-- scripts -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-41013838-1', 'concrete5-irc.com');
+		  ga('send', 'pageview');
+		</script>
+		{% block scripts %}{% endblock %}
+	</body>
+</html>
