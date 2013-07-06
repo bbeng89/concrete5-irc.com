@@ -16,7 +16,7 @@ EMAIL_HOST_PASSWORD = environ['SMTP_PASS']
 DEFAULT_FROM_EMAIL = 'bot@concrete5-irc.com'
 SERVER_EMAIL = 'bot@concrete5-irc.com'
 
-STATIC_ROOT = '/home/bbeng89/webapps/c5log_live_static'
+STATIC_ROOT = '/home/bbeng89/webapps/concrete5_irc_static'
 
 STATIC_URL = 'http://concrete5-irc.com/static/'
 
