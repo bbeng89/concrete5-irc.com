@@ -12,6 +12,10 @@
 			<div class="container-fluid">
 				<div class="row-fluid" style="margin-top:50px;">
 					<div class="span8 offset2">
+						<div class="alert alert-info">
+							<p><strong>The #concrete5 logs are no longer available</strong></p>
+							<p>Due to recent requests for exemption from the logs, as well as a general lack of interest, I've decided to take the logs down. I apologize for any inconvenience this may cause.</p>
+						</div>
 						<div class="header">
 							<a href="http://www.concrete5.org" target="_blank"><img src="{{ STATIC_URL }}img/concrete5_Wordmark_200x37.png" style="vertical-align:middle;" /></a> 
 							<span style="font-size:28px;vertical-align:middle;"> - IRC Logs</span>
@@ -48,13 +52,16 @@
 							</div>
 							<div class="span6">
 								<legend>Register</legend>
+								<p>Registration is now closed and all accounts have been deactivated.</p>
+								{% comment %}
 								<strong>Don't have an account?</strong>
 								<p>Join the #concrete5 IRC channel on the freenode network and send the following message to our bot:</p>
 								<code>
-									/msg c5irc register [your_password] [your_email]
+									/msg c5irc .register [your_password] [your_email]
 								</code>
 								<br/><br/>
 								<p>Registering will give you access to the IRC logs for #concrete5</p>
+								{% endcomment %}
 							</div>
 						</div>
 					</div>

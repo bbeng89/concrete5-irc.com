@@ -21,6 +21,9 @@
 						<li class="{% if request.resolver_match.url_name == 'stats' %}active{% endif %}">
 							<a href="{% url 'stats' %}">Statistics</a>
 						</li>
+						<li class="{% if request.resolver_match.url_name == 'bot' %}active{% endif %}">
+							<a href="{% url 'bot' %}">Bot</a>
+						</li>
 						<li class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">
 							<a href="{% url 'about' %}">About</a>
 						</li>

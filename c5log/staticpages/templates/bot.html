@@ -1,0 +1,43 @@
+{% extends "_base.html" %}
+
+{% block page_title %} Bot Commands | {{ block.super }} {% endblock %}
+
+{% block content %}
+	<h2>Bot Commands</h2>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Command</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td colspan="2">Text Utility Functions</td></tr>
+			<tr>
+				<td>.base64 &lt;string&gt;</td>
+				<td>Encode &lt;string&gt; with base64.</td>
+			</tr>
+			<tr>
+				<td>.capitalize/.capitalise &lt;string&gt;</td>
+				<td>Capitalizes <string>.</td>
+			</tr>
+			<tr>
+				<td>.upper <string></td>
+				<td>Convert <string> to uppercase.</td>
+			</tr>
+			<tr>
+				<td>.lower <string></td>
+				<td>Convert <string> to lowercase.</td>
+			</tr>
+			<tr>
+				<td>.titlecase <string></td>
+				<td>Convert <string> to titlecase.</td>
+			</tr>
+			<tr>
+				<td>.swapcase <string></td>
+				<td>Swaps the capitalization of <string></td>
+			</tr>
+			<tr><td colspan="2">Encode Utility Functions</td></tr>
+		</tbody>
+	</table>
+{% endblock %}
